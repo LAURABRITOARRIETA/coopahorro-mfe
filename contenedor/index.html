@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoopAhorro en Línea</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+        }
+
+        header {
+            background: #003366;
+            color: white;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: #d0e0f0;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+       
+        #iframe-soporte {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 380px;
+            border: none;
+            z-index: 999;
+        }
+
+        .alerta-expiracion {
+            background: #ffdddd;
+            color: #a00;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>CoopAhorro en Línea</h2>
+        <nav id="app-nav" style="display: none;">
+            <a href="#/transaccional">Transacciones</a>
+            <a href="#/certificados">Certificados (Legado)</a>
+            <a href="#/perfil">Mi Perfil</a>
+        </nav>
+        <span id="app-usuario">No autenticado</span>
+    </header>
+
+    <main>
+        <div id="alerta-sesion" class="alerta-expiracion">Su sesión ha expirado por inactividad.</div>
+        <div id="app-root"></div>
+    </main>
+
+    
+    <iframe id="iframe-soporte" src="http://localhost:8084/index.html" title="Soporte en Vivo"></iframe>
+
+    <script src="contenedor.js"></script>
+</body>
+
+</html>
